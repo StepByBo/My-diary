@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.home{
+    background-color:#99CCFF;
+    height: 120px;
+    display: flex;
+}
+#head_photo_box{
+    flex: 1;
+}
+#head_photo{
+    width: 90px ;
+    height: 90px;
+    border-radius: 45px;
+    margin-left: 25%;
+    margin-top: 5%;
+}
+.edit{
+    width: 20px;
+    height: 20px;
+    margin-left: 5%;
+    /* background-color: #99CCFF; */
+}
+#sign{       
+    width: 200px;
+    flex: 2;
+    display:flex;
+    align-items:center;
+}
+.login-button{
+    margin-left: 5%;
+    border-radius: 6px;
+    border:1px solid #33323252;
+    background-color: rgba(217, 229, 240, 0.938);
+    width: 46px;
+    height: 23px;
+    color: #333232;
+    font-size: 13px;
+    font-family: SimSun;
+}
+#slogan{
+    width: 500px;
+    flex: 3;
+    display:flex;
+    align-items:center;
+}
+#slogan p{
+    font-size: 50px;
+    font-style: italic;
+    font-weight:bold;
+    color: #FFFFFF;
+    font-family: Georgia;
+    margin: 0 auto;
+}
+
+.down_body{
+    display: flex;
+    background-color: #99ccff60;
+    min-height: 100vh;
+}
+.diary_list_box{
+    flex: 3;
+}
+.diary_card{
+    background-color: #cccccc52;
+    width: 80%;
+    height: 200px;
+    margin: 10px auto 0px auto;
+    position: relative;
+}
+.diary_folder{
+    background-color: #cccccc52;
+    margin: 30px 20% 0px ;
+    width: 50%;
+    height: 100px;
+    display:flex;
+    align-items:center;
+}
+.folder_text{
+    font-size: 20px;
+    font-family: SimHei;
+    margin-left: 10%;
+    color: #3e3e41;
+}
+.time{
+    font-size: 15px;
+    font-family: SimHei;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.diary_text{
+    font-size: 15px;
+    font-family: SimSun;
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    margin-left: 30px;
+    margin-top: 30px;
+    background-color: #cccccc00;
+    border: 2px ;
+}
+.edit_button{
+    margin-top: 170px;
+    margin-left: 85%;
+    border-radius: 4px;
+    border:1px solid #33323252;
+    background-color: rgba(160, 192, 223, 0.404);
+    width: 42px;
+    height: 20px;
+    color: #333232;
+    font-size: 14px;
+    font-family: SimSun;
+}
+.delete_button{
+    margin-top: 170px;
+    width: 42px;
+    height: 20px;
+    border-radius: 4px;
+    border:1px solid #33323252;
+    background-color: rgba(160, 192, 223, 0.404);
+    color: #333232;
+    font-size: 14px;
+    font-family: SimSun;
+}
+
+.button_list_box{
+    flex: 1;
+}
+#button_card1{
+    width: 100px;
+    height: 50px;
+    background-color: #b1cbe4da;
+    position: fixed;
+    top: 40%;
+    right: 12%;
+    border-radius: 10px;
+    display: flex;
+    align-items:center;
+}
+#button_card2{
+    width: 100px;
+    height: 50px;
+    background-color: #b1cbe4da;
+    position: fixed;
+    top: 50%;
+    right: 12%;
+    border-radius: 10px;
+    display: flex;
+    align-items:center;
+}
+#button_card3{
+    width: 100px;
+    height: 50px;
+    background-color: #b1cbe4da;
+    position: fixed;
+    top: 60%;
+    right: 12%;
+    border-radius: 10px;
+    display: flex;
+    align-items:center;
+}
+#button_card4{
+    width: 100px;
+    height: 50px;
+    background-color: #b1cbe4da;
+    border-radius: 10px;
+    display: flex;
+    align-items:center;
+    position: fixed;
+    right: 5%;
+    bottom: 15%;
+}
+.button_text{
+    margin: 0 auto;
+    font-size: 18px;
+    font-family: SimSun;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+.edit_new_diary{
+    background-color: #cccccc52;
+    width: 80%;
+    height: 65%;
+    display: block;
+    margin: 5% auto;
+}
+.form_box1{
+    width: 20%;
+    height: 150px;
+    background-color: #b1cbe4da;
+    border-radius: 10px;
+    position: fixed;
+    top: 30%;
+    right: 5%;
+    padding: 5px 7px 5px 7px;
+    color: #333232;
+    font-size: 16px;
+    font-family: SimSun;
+    line-height: 20px;
+}
+.form_box2{
+    width: 20%;
+    height: 55px;
+    background-color: #b1cbe4da;
+    border-radius: 10px;
+    position: fixed;
+    padding: 5px 7px 5px 7px;
+    top: 60%;
+    right: 5%;
+    padding: 5px;
+    color: #333232;
+    font-size: 16px;
+    font-family: SimSun;
+    line-height: 25px;
+}
+.new-class-button{
+    width: 35px;
+    height: 20px;
+    border-radius: 4px;
+    border:1px solid #333232a9;
+    color: #333232;
+    font-size: 13px;
+    background-color: rgb(217, 229, 240);
+    color: #333232;
+}

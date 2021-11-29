@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Edit new diary</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <div class="home">
+            <div id="head_photo_box">
+                <img id="head_photo" src="head.jpg">
+                <img class="edit" src="edit.png">
+            </div>
+            <div id="sign">
+                <p>This is my diary.</p>
+                <img class="edit" src="edit.png">
+            </div>
+            <div id="slogan">
+                <p>Welcome to my home !</p>
+            </div>
+        </div>
+
+        <div class="down_body">
+            <div class="diary_list_box">
+                <input placeholder="写新日记吧......" class="edit_new_diary">
+            </div>
+            <div class="button_list_box">
+                <form class="form_box1">
+                    <label>添加分类:</label><br>                   
+                    <input type="checkbox" value="1" name="folder-class" />
+                    <label>日常生活1</label>                    
+                    <input type="checkbox" value="2" name="folder-class" />
+                    <label>日常生活2</label>                    
+                    <input type="checkbox" value="2" name="folder-class" />
+                    <label>日常生活3</label>
+                    <input type="checkbox" value="2" name="folder-class" />
+                    <label>日常生活4</label>
+                    <button class="new-class-button">new</button>
+                </form>
+                <form class="form_box2">
+                    <label>设置隐私:</label><br>                    
+                    <input type="radio" value="1" name="privacy" />
+                    <label>公开</label>                   
+                    <input type="radio" value="2" name="privacy" />
+                    <label>仅自己可见</label>
+                </form>
+                <div id="button_card4">
+                    <div class="button_text">确定发布</div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
