@@ -20,8 +20,8 @@
 .edit{
     width: 20px;
     height: 20px;
-    margin-left: 5%;
-    /* background-color: #99CCFF; */
+    margin-left: 3%;
+    cursor: pointer;
 }
 #sign{       
     width: 200px;
@@ -29,7 +29,19 @@
     display:flex;
     align-items:center;
 }
-.login-button{
+.login_button{
+    margin-left: 30%;
+    border-radius: 6px;
+    border:1px solid #33323252;
+    background-color: rgba(217, 229, 240, 0.938);
+    width: 46px;
+    height: 23px;
+    color: #333232;
+    font-size: 13px;
+    font-family: SimSun;
+    cursor: pointer;
+}
+.logout_button{
     margin-left: 5%;
     border-radius: 6px;
     border:1px solid #33323252;
@@ -39,6 +51,7 @@
     color: #333232;
     font-size: 13px;
     font-family: SimSun;
+    cursor: pointer;
 }
 #slogan{
     width: 500px;
@@ -77,6 +90,7 @@
     height: 100px;
     display:flex;
     align-items:center;
+    cursor: pointer;
 }
 .folder_text{
     font-size: 20px;
@@ -113,6 +127,7 @@
     color: #333232;
     font-size: 14px;
     font-family: SimSun;
+    cursor: pointer;
 }
 .delete_button{
     margin-top: 170px;
@@ -124,6 +139,7 @@
     color: #333232;
     font-size: 14px;
     font-family: SimSun;
+    cursor: pointer;
 }
 
 .button_list_box{
@@ -139,6 +155,7 @@
     border-radius: 10px;
     display: flex;
     align-items:center;
+    cursor: pointer;
 }
 #button_card2{
     width: 100px;
@@ -150,6 +167,7 @@
     border-radius: 10px;
     display: flex;
     align-items:center;
+    cursor: pointer;
 }
 #button_card3{
     width: 100px;
@@ -161,17 +179,6 @@
     border-radius: 10px;
     display: flex;
     align-items:center;
-}
-#button_card4{
-    width: 100px;
-    height: 50px;
-    background-color: #b1cbe4da;
-    border-radius: 10px;
-    display: flex;
-    align-items:center;
-    position: fixed;
-    right: 5%;
-    bottom: 15%;
 }
 .button_text{
     margin: 0 auto;
@@ -217,6 +224,24 @@
     font-family: SimSun;
     line-height: 25px;
 }
+.botton_list_box2{
+    width: 20%;
+    position: fixed;
+    right: 5%;
+    bottom: 15%;
+    display: flex;
+    justify-content: space-around;
+}
+#button_card4{
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    background-color: #b1cbe4da;
+    border-radius: 10px;
+    display: flex;
+    align-items:center;
+    cursor: pointer;
+}
 .new-class-button{
     width: 35px;
     height: 20px;
@@ -227,3 +252,40 @@
     background-color: rgb(217, 229, 240);
     color: #333232;
 }
+
+.login_back{
+    background-color: #a7ccf1c0;
+    min-height: 100vh;
+    min-width: 100vh;
+    position: relative;
+}
+.login_box{
+    width: 450px;
+    height: 300px;
+    background-color: #cccccc85;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -200px 0 0 -225px;
+}
+.login_input{
+    display: block;
+    width: 230px;
+    height: 30px;
+    margin: 40px auto;
+}
+.login_button_box{
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+.login_button2{
+    width: 65px;
+    height: 35px;
+    border: 1px solid;
+    border-radius: 8px;
+    background-color: #a7ccf1c0;
+    cursor: pointer;
+}
+
