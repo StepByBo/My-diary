@@ -104,6 +104,15 @@
     position: absolute;
     margin-left: 10px;
     margin-top: 5px;
+    display: block;
+}
+.time_input{
+    font-size: 15px;
+    font-family: SimHei;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 5px;
+    display: none;
 }
 .diary_text{
     font-size: 15px;
@@ -115,9 +124,21 @@
     margin-top: 30px;
     background-color: #cccccc00;
     border: 2px ;
+    display: block;
+}
+.diary_text_input{
+    font-size: 15px;
+    font-family: SimSun;
+    position: absolute;
+    width: 90%;
+    height: 70%;
+    margin-left: 30px;
+    margin-top: 30px;
+    border: 2px ;
+    display: none;
 }
 .edit_button{
-    margin-top: 170px;
+    margin-top: 175px;
     margin-left: 85%;
     border-radius: 4px;
     border:1px solid #33323252;
@@ -130,7 +151,7 @@
     cursor: pointer;
 }
 .delete_button{
-    margin-top: 170px;
+    margin-top: 175px;
     width: 42px;
     height: 20px;
     border-radius: 4px;
@@ -188,12 +209,23 @@
     color: #FFFFFF;
 }
 
+.edit_date_box{
+    width: 80%;
+    margin: 20px auto;
+}
+.edit_date{
+    width: 7%;
+    font-size: 16px;
+    font-family: SimSun;
+}
 .edit_new_diary{
     background-color: #cccccc52;
     width: 80%;
     height: 65%;
     display: block;
-    margin: 5% auto;
+    margin: 0 auto;
+    font-size: 16px;
+    font-family: SimSun;
 }
 .form_box1{
     width: 20%;
@@ -251,6 +283,7 @@
     font-size: 13px;
     background-color: rgb(217, 229, 240);
     color: #333232;
+    margin-left: 5px;
 }
 
 .login_back{

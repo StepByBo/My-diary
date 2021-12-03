@@ -6,8 +6,9 @@
                 <img class="edit" src="../assets/img/edit.png">
             </div>
             <div id="sign">
-                <p>This is my diary.</p>
-                <img class="edit" src="../assets/img/edit.png">
+                <p>{{mySign}}</p>
+                <input v-model="mySign" @blur="finishEditSign($event)" style="display:none">
+                <img class="edit" src="../assets/img/edit.png" @click="editSign($event)">
                 <button class="logout_button" @click="logOut()">退出</button>
             </div>
             <div id="slogan">
@@ -50,21 +51,28 @@ export default {
     return{
       chooseList: true,
       chooseFolder: false,
+      mySign:"This is my diary.",
+      showSign: true,
+      showEditSign: false,
       diary_list:[],
       diary_list2:[
         {
+          id: 0,
           time: "2021年11月15日 20：07",
           text: "今天是星期一"
         },
         {
+          id: 1,
           time: "2021年11月16日 20：07",
           text: "今天是星期二"
         },
         {
+          id: 2,
           time: "2021年11月17日 20：07",
           text: "今天是星期三"
         },
         {
+          id: 3,
           time: "2021年11月18日 20：07",
           text: "今天是星期四"
         },
@@ -124,6 +132,14 @@ export default {
       else{this.diary_list = this.folder3}
       this.chooseList = true
       this.chooseFolder = false
+    },
+    editSign: function(event){
+      event.currentTarget.parentNode.childNodes[0].setAttribute("style","display:none")
+      event.currentTarget.parentNode.childNodes[1].setAttribute("style","display:inline")
+    },
+    finishEditSign: function(event){
+      event.currentTarget.parentNode.childNodes[0].setAttribute("style","display:inline")
+      event.currentTarget.parentNode.childNodes[1].setAttribute("style","display:none")
     }
   }
 }
