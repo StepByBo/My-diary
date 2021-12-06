@@ -1,17 +1,17 @@
 <template>
     <div>
         <div class="home">
-            <div id="head_photo_box">
-                <img id="head_photo" src="../assets/img/head.jpg">
+            <div class="head_photo_box">
+                <img class="head_photo" src="../assets/img/head.jpg">
                 <img class="edit" src="../assets/img/edit.png">
             </div>
-            <div id="sign">
+            <div class="sign">
                 <p>{{mySign}}</p>
                 <input v-model="mySign" @blur="finishEditSign($event)" style="display:none">
                 <img class="edit" src="../assets/img/edit.png" @click="editSign($event)">
                 <button class="logout_button" @click="logOut()">退出</button>
             </div>
-            <div id="slogan">
+            <div class="slogan">
                 <p>Welcome to my home !</p>
             </div>
         </div>
@@ -27,19 +27,16 @@
             </div>
             <div class="button_list_box">
                 <div class="form_box1">
-                    <label>添加分类:</label><br>                   
-                    <input type="checkbox" value="1" name="folder-class" v-model="classes" />
-                    <label>日常生活1</label>                    
-                    <input type="checkbox" value="2" name="folder-class" v-model="classes" />
-                    <label>日常生活2</label>                    
-                    <input type="checkbox" value="3" name="folder-class" v-model="classes" />
-                    <label>日常生活3</label>
-                    <input type="checkbox" value="4" name="folder-class" v-model="classes" />
-                    <label>日常生活4</label>
+                    <label>添加分类:</label><br>
+                    <div style="display:inline" v-for="(cla, index) in classes" :key="index">
+                        <input type="checkbox" :value="cla.value" v-model="classes_value"/>
+                        <label>{{cla.text}}</label> 
+                    </div>             
                     <button class="new-class-button" @click="newClass()">new</button>
                     <div v-show="nClass">
-                        <input>
-                        <button class="new-class-button">确定</button>
+                        <input v-model="nClassText" style="width:60%">
+                        <button class="new-class-button" @click="confirmNewClass()">确定</button>
+                        <button class="new-class-button" @click="cancel()">取消</button>
                     </div>
                     
                 </div>
@@ -51,10 +48,10 @@
                     <label>仅自己可见</label>
                 </div>
                 <div class="botton_list_box2">
-                    <div id="button_card4">
+                    <div class="button_card4">
                         <div class="button_text" @click="returnToMasterHome()">返回</div>
                     </div>
-                    <div id="button_card4">
+                    <div class="button_card4">
                         <div class="button_text" @click="publish()">确定发布</div>
                     </div>
                 </div>
@@ -74,10 +71,25 @@ export default {
         day: "",
         date: "",
         diary_text: "",
-        classes: [],
+        classes_value: [],
         set_privacy: 0,
         mySign:"This is my diary.",
-        nClass: false
+        nClass: false,
+        nClassText: "",
+        classes:[
+            {
+                text:"日常生活1",
+                value:1
+            },
+            {
+                text:"日常生活2",
+                value:2
+            },
+            {
+                text:"日常生活3",
+                value:3
+            },
+        ]
     }
   },
   methods:{
@@ -98,7 +110,7 @@ export default {
         else if(this.month==""){alert("请输入月份")}
         else if(this.day==""){alert("请输入日期")}
         else if(this.diary_text==""){alert("请日记内容")}
-        else if(this.classes.length==0){alert("请选择日记分类")}
+        else if(this.classes_value.length==0){alert("请选择日记分类")}
         else if(this.set_privacy==0){alert("请设置隐私")} 
         else{
             var message = confirm("确定发布吗？")
@@ -114,10 +126,11 @@ export default {
                 var obj = {
                 date: this.date,
                 diary_text: this.diary_text,
-                classes: this.classes,
+                classes: this.classes_value,
                 set_privacy:this.set_privacy
                 }
                 console.log(obj)
+                console.log(this.classes_value)
             }
         }
         
@@ -131,11 +144,83 @@ export default {
         event.currentTarget.parentNode.childNodes[1].setAttribute("style","display:none")
     },
     newClass: function(){
+        this.nClassText = ""
         this.nClass = true
+    },
+    confirmNewClass: function(){
+        if(this.nClassText!=""){
+            var newC = {
+            text:this.nClassText,
+            value:this.classes.length+1
+        }
+        this.classes.push(newC)
+        this.nClass = false
+        } 
+    },
+    cancel: function(){
+        this.nClass = false
     }
   }
 }
 </script>
 
 <style>
+.form_box1{
+    width: 20%;
+    height: 150px;
+    background-color: #b1cbe4da;
+    border-radius: 10px;
+    position: fixed;
+    top: 30%;
+    right: 5%;
+    padding: 5px 7px 5px 7px;
+    color: #333232;
+    font-size: 16px;
+    font-family: SimSun;
+    line-height: 20px;
+}
+.form_box2{
+    width: 20%;
+    height: 55px;
+    background-color: #b1cbe4da;
+    border-radius: 10px;
+    position: fixed;
+    padding: 5px 7px 5px 7px;
+    top: 60%;
+    right: 5%;
+    padding: 5px;
+    color: #333232;
+    font-size: 16px;
+    font-family: SimSun;
+    line-height: 25px;
+}
+.botton_list_box2{
+    width: 20%;
+    position: fixed;
+    right: 5%;
+    bottom: 15%;
+    display: flex;
+    justify-content: space-around;
+}
+.button_card4{
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    background-color: #b1cbe4da;
+    border-radius: 10px;
+    display: flex;
+    align-items:center;
+    cursor: pointer;
+}
+.new-class-button{
+    width: 35px;
+    height: 20px;
+    border-radius: 4px;
+    border:1px solid #333232a9;
+    color: #333232;
+    font-size: 13px;
+    background-color: rgb(217, 229, 240);
+    color: #333232;
+    margin-left: 5px;
+}
 </style>

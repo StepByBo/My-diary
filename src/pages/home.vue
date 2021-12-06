@@ -1,29 +1,33 @@
 <template>
     <div id="app">
       <div class="home">
-          <div id="head_photo_box">
-              <img id="head_photo" src="../assets/img/head.jpg">
+          <div class="head_photo_box">
+              <img class="head_photo" src="../assets/img/head.jpg">
           </div>
-          <div id="sign">
+          <div class="sign">
               <p>This is my diary.</p>
               <router-link :to="{path:'/login'}">
                 <button class="login_button">登录</button>
               </router-link>
           </div>
-          <div id="slogan">
+          <div class="slogan">
               <p>Welcome to my home !</p>
           </div>
       </div>
 
       <div class="down_body">
-          <diaryList :show="chooseList" :diarys="diary_list"></diaryList>
-          <diaryFolder :show="chooseFolder" :folders="folder_list" @clickChildFolder='clickParentFolder'></diaryFolder>
+          <div class="diary_list_box" v-show="chooseList">
+            <diary :diary="diary" v-for="diary in diary_list" :key="diary.id"></diary>
+          </div>
+          <div class="diary_list_box" v-show="chooseFolder">
+            <folder :folder="folder" v-for="folder in folder_list" :key="folder" @clickChildFolder="clickParentFolder"></folder>
+          </div>
           
           <div class="button_list_box">
-              <div id="button_card1" @click="listUseTime()">
+              <div class="button_card1" @click="listUseTime()">
                   <div class="button_text">按时间</div>
               </div>
-              <div id="button_card2" @click="listUseClass()">
+              <div class="button_card2" @click="listUseClass()">
                   <div class="button_text">按分类</div>
               </div>
           </div>
@@ -33,13 +37,13 @@
 </template>
 
 <script>
-import diaryFolder from '../components/diary-folder.vue';
-import diaryList from '../components/diary-list.vue';
+import Folder from '../components/folder.vue';
+import diary from '../components/diary.vue';
 export default {
   name: 'home',
   components:{
-    diaryList,
-    diaryFolder
+    diary,
+    Folder
   },
   data(){
     return{

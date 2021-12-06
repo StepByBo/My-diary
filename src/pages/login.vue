@@ -42,4 +42,40 @@ export default {
 </script>
 
 <style>
+.login_back{
+    background-color: #a7ccf1c0;
+    min-height: 100vh;
+    min-width: 100vh;
+    position: relative;
+}
+.login_box{
+    width: 450px;
+    height: 300px;
+    background-color: #cccccc85;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -200px 0 0 -225px;
+}
+.login_input{
+    display: block;
+    width: 230px;
+    height: 30px;
+    margin: 40px auto;
+}
+.login_button_box{
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+.login_button2{
+    width: 65px;
+    height: 35px;
+    border: 1px solid;
+    border-radius: 8px;
+    background-color: #a7ccf1c0;
+    cursor: pointer;
+}
+
 </style>
