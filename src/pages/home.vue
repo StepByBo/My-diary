@@ -53,19 +53,23 @@ export default {
       diary_list2:[
         {
           time: "2021年11月15日 20：07",
-          text: "今天是星期一"
+          text: "今天是星期一",
+          privacy:0
         },
         {
           time: "2021年11月16日 20：07",
-          text: "今天是星期二"
+          text: "今天是星期二",
+          privacy:0
         },
         {
           time: "2021年11月17日 20：07",
-          text: "今天是星期三"
+          text: "今天是星期三",
+          privacy:0
         },
         {
           time: "2021年11月18日 20：07",
-          text: "今天是星期四"
+          text: "今天是星期四",
+          privacy:1
         },
       ],
       folder_list:[],

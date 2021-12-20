@@ -101,7 +101,9 @@ export default {
     },
     returnToMasterHome: function(){
       var message = confirm("确定返回主页吗？")
+      
       if(message==true){
+        debugger;
         this.$router.push('/masterHome')
       }  
     },

@@ -22,6 +22,12 @@
             </div> 
             <div class="diary_list_box" v-show="chooseFolder">
               <folder-master :folder="folder" v-for="folder in folder_list" :key="folder" @clickChildFolder="clickParentFolder" @clickDeleteFolder="deleteFolder"></folder-master>
+              <button class="new-class" @click="newClass()">添加新分类</button>
+                <div v-show="nClass" style="display:inline-block;margin-left:5%">
+                    <input v-model="nClassText" style="width:300px;height:30px">
+                    <button class="n-class-button" @click="confirmNewClass()">确定</button>
+                    <button class="n-class-button" @click="cancel()">取消</button>
+                </div>
             </div>
             
             <div class="button_list_box">
@@ -58,27 +64,33 @@ export default {
       mySign:"This is my diary.",
       showSign: true,
       showEditSign: false,
+      nClass: false,
+      nClassText:"",
       diary_list:[],
       diary_list2:[
         {
           id: 0,
           time: "2021年11月15日 20：07",
-          text: "今天是星期一"
+          text: "今天是星期一",
+          privacy:0
         },
         {
           id: 1,
           time: "2021年11月16日 20：07",
-          text: "今天是星期二"
+          text: "今天是星期二",
+          privacy:0
         },
         {
           id: 2,
           time: "2021年11月17日 20：07",
-          text: "今天是星期三"
+          text: "今天是星期三",
+          privacy:1
         },
         {
           id: 3,
           time: "2021年11月18日 20：07",
-          text: "今天是星期四"
+          text: "今天是星期四",
+          privacy:0
         },
       ],
       folder_list:[],
@@ -164,6 +176,18 @@ export default {
           }
         }
       }
+    },
+    newClass: function(){
+        this.nClass = true
+    },
+    confirmNewClass: function(){
+      if(this.nClassText!=""){
+        this.folder_list.push(this.nClassText)
+        this.nClass = false
+      } 
+    },
+    cancel: function(){
+        this.nClass = false
     }
   }
 }
@@ -171,15 +195,34 @@ export default {
 
 <style>
 .login_button{
-    margin-left: 30%;
-    border-radius: 6px;
-    border:1px solid #33323252;
-    background-color: rgba(217, 229, 240, 0.938);
-    width: 46px;
-    height: 23px;
-    color: #333232;
-    font-size: 13px;
-    font-family: SimSun;
-    cursor: pointer;
+  margin-left: 30%;
+  border-radius: 6px;
+  border:1px solid #33323252;
+  background-color: rgba(217, 229, 240, 0.938);
+  width: 46px;
+  height: 23px;
+  color: #333232;
+  font-size: 13px;
+  font-family: SimSun;
+  cursor: pointer;
+}
+.new-class{
+  width: 100px;
+  height: 50px;
+  background-color: #cccccc52;
+  border-radius: 10px;
+  border:1px solid #33323252;
+  margin: 50px 0 0 20%;
+}
+.n-class-button{
+  width: 50px;
+  height: 30px;
+  border-radius: 4px;
+  border:1px solid #333232a9;
+  color: #333232;
+  font-size: 13px;
+  background-color: rgb(217, 229, 240);
+  color: #333232;
+  margin-left: 10px;
 }
 </style>
